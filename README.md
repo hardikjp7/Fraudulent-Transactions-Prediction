@@ -89,11 +89,3 @@ Remember to adjust the input array according to the specific details of the tran
 
 ![Fraud Detection Demo](demo.gif)
 
-## Credits
-
-- Author: Your Name
-- LinkedIn: [Your LinkedIn Profile](https://www.linkedin.com/in/hardikjp/)
-- GitHub: [Your GitHub Profile]([your_github_profile_link](https://github.com/hardikjp7))
-
-Feel free to reach out for any questions or collaborations!
-
