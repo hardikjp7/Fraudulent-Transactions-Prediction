@@ -4,16 +4,14 @@ import numpy as np
 import pickle
 
 # Load the saved model and scaler
-model = pickle.load(open('model.sav', 'rb'))
-scaler = pickle.load(open('scaler.sav', 'rb'))
+model = pickle.load(open('Models/model.sav', 'rb'))
+scaler = pickle.load(open('Models/scaler.sav', 'rb'))
 
 # Function to preprocess input data
 def preprocess_data(data):
-    # Assuming the columns are similar to the original dataset
-    # You may need to adjust this based on the actual columns in your latest dataframe
+
     feature_names = ['step', 'type', 'amount', 'oldbalanceOrg', 'oldbalanceDest', 'isFlaggedFraud']
     
-    # Assuming 'type' column is categorical and needs encoding
     data['type'] = data['type'].map({'CASH_OUT': 5, 'PAYMENT': 4, 'CASH_IN': 3, 'TRANSFER': 2, 'DEBIT': 1})
     
     # Feature scaling
@@ -23,7 +21,7 @@ def preprocess_data(data):
 
 # Streamlit App
 def main():
-    st.title("Fraud Detection App")
+    st.title("Fraud Transaction Detection App")
 
     # Get user input
     st.header("Enter Transaction Details:")
