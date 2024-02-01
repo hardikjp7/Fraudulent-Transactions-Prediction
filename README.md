@@ -7,7 +7,7 @@ This repository contains a Fraud Detection project that focuses on predicting wh
 
 ## Data
 
-The dataset used for training and analysis is named `Fraud.csv`. It consists of 6362620 rows and 10 columns, containing various features related to financial transactions.
+The dataset used for training and analysis is named `Fraud.csv`. It has about 6.5 million rows and 10 columns, containing various features related to financial transactions.
 
 ## Project Structure
 
