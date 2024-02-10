@@ -8,14 +8,12 @@ model = pickle.load(open('model.sav', 'rb'))
 scaler = pickle.load(open('scaler.sav', 'rb'))
 
 # Function to preprocess input data
+# Function to preprocess input data
 def preprocess_data(data):
 
     feature_names = ['step', 'type', 'amount', 'oldbalanceOrg', 'oldbalanceDest', 'isFlaggedFraud']
     
     data['type'] = data['type'].map({'CASH_OUT': 5, 'PAYMENT': 4, 'CASH_IN': 3, 'TRANSFER': 2, 'DEBIT': 1})
-    
-    # Impute missing values with zeros
-    data.fillna(0, inplace=True)
     
     # Feature scaling
     data_scaled = scaler.transform(data[feature_names])
