@@ -14,6 +14,9 @@ def preprocess_data(data):
     
     data['type'] = data['type'].map({'CASH_OUT': 5, 'PAYMENT': 4, 'CASH_IN': 3, 'TRANSFER': 2, 'DEBIT': 1})
     
+    # Impute missing values with zeros
+    data.fillna(0, inplace=True)
+    
     # Feature scaling
     data_scaled = scaler.transform(data[feature_names])
     
