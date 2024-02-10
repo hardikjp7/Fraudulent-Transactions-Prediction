@@ -14,14 +14,15 @@ def preprocess_data(data):
     
     data['type'] = data['type'].map({'CASH_OUT': 5, 'PAYMENT': 4, 'CASH_IN': 3, 'TRANSFER': 2, 'DEBIT': 1})
     
-    # Impute missing values with zeros
-    data.fillna(0, inplace=True)
+    # Impute missing values with the mean of each feature
+    imputer = SimpleImputer(strategy='mean')
+    data_imputed = pd.DataFrame(imputer.fit_transform(data), columns=data.columns)
     
     # Feature scaling
-    data_scaled = scaler.transform(data[feature_names])
+    data_scaled = scaler.transform(data_imputed[feature_names])
     
     return data_scaled
-
+    
 # Streamlit App
 def main():
     st.title("Fraud Transaction Detection App")
