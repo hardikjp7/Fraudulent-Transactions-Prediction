@@ -4,8 +4,8 @@ import numpy as np
 import pickle
 
 # Load the saved model and scaler
-model = pickle.load(open('Models/model.sav', 'rb'))
-scaler = pickle.load(open('Models/scaler.sav', 'rb'))
+model = pickle.load(open('model.sav', 'rb'))
+scaler = pickle.load(open('scaler.sav', 'rb'))
 
 # Function to preprocess input data
 def preprocess_data(data):
